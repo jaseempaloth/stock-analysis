@@ -17,6 +17,7 @@ Ensure you have Python installed on your machine. If you don’t have Streamlit 
 
 ```bash
 pip install streamlit pandas
+```
 
 Running the App Locally
 Clone the repository or download the code.
@@ -25,11 +26,12 @@ Start the app with the following command:
 
 ```bash
 streamlit run app.py
-
+```
 The app will open in your default web browser, allowing you to upload a CSV file with stock data.
 Alternatively, you can directly access the deployed app here:
+```markdown
 [Open High Open Low Strategy](https://openhigh-or-low.streamlit.app/)
-
+```
 CSV File Format
 Ensure that your CSV file has the following columns (case-insensitive):
 
@@ -43,6 +45,7 @@ SYMBOL,OPEN,LOW,HIGH
 TCS,3500,3480,3520
 INFY,1500,1490,1510
 RELIANCE,2400,2380,2410
+```
 
 What the App Does
 Open High: Displays rows where the OPEN price equals the LOW price.
