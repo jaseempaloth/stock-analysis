@@ -70,7 +70,7 @@ Open Low: Displays rows where the OPEN price equals the HIGH price.
 
 #### Screenshot
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 
 #### Technologies Used
