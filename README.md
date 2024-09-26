@@ -4,7 +4,6 @@ This is a web app built using **Streamlit** that implements the **Open High Open
 
 ## Features
 
-- Upload any stock data CSV file.
 - Displays data where `OPEN = LOW` (Open High strategy).
 - Displays data where `OPEN = HIGH` (Open Low strategy).
 - Interactive and easy-to-use interface.
@@ -16,7 +15,8 @@ This is a web app built using **Streamlit** that implements the **Open High Open
 Ensure you have Python installed on your machine. If you don’t have Streamlit and pandas installed, use the following command to install them:
 
 ```bash
-pip install streamlit pandas
+pip install streamlit
+pip install pandas
 ```
 
 Running the App Locally
@@ -32,8 +32,19 @@ Alternatively, you can directly access the deployed app here:
 
 [Open High Open Low Strategy](https://openhigh-or-low.streamlit.app/)
 
+## Getting Real-Time Market Data
+
+To run the Open High Open Low Strategy app with real market data, you can download stock data in CSV format from the National Stock Exchange (NSE) or Bombay Stock Exchange (BSE). Follow these steps:
+
+### NSE (National Stock Exchange)
+To download stock data from NSE:
+1. Go to the [NSE website](https://www.nseindia.com/).
+2. Navigate to the "Market Data" section.
+3. Choose the desired index (e.g., Nifty 50, Nifty 100).
+4. Download the data in CSV format.
 
 CSV File Format
+
 
 Ensure that your CSV file has the following columns (case-insensitive):
 
@@ -50,12 +61,21 @@ RELIANCE,2400,2380,2410
 ```
 
 What the App Does
+
 Open High: Displays rows where the OPEN price equals the LOW price.
+
 Open Low: Displays rows where the OPEN price equals the HIGH price.
 
-Screenshot
 
-Technologies Used
+
+#### Screenshot
+
+![alt text](image.png)
+
+
+#### Technologies Used
+
 Streamlit: For building the web app.
+
 Pandas: For data manipulation and filtering.
 
