@@ -4,6 +4,14 @@ import altair as alt
 
 st.title("Open High Open Low Strategy")
 
+# short description about the strategy
+st.write("""
+The **Open High Low strategy** is a trading method where:
+- **Open High** refers to when the opening price(OPEN) of a stock is the same as its lowest price(LOW) of the day.
+- **Open Low** refers to when the opening price(OPEN) of a stock is the same as its highest price(HIGH) of the day.
+Traders use these patterns to identify potential price movements.
+""")
+
 uploaded_file = st.file_uploader('Upload your csv file', type=['csv'])
 
 if uploaded_file is not None:
