@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import altair as alt
 
 st.title("Open High Open Low Strategy")
 
@@ -38,6 +39,15 @@ if uploaded_file is not None:
         file_name='open_low.csv',
         mime='text/csv'
     )
+
+    # User-defined threshold for % change
+    user_threshold = st.slider("Change the Percentage", min_value=-5.0, max_value=10.0, value=1.0, step=0.1)
+    
+    # Filter data based on user input
+    filtered_by_threshold = df[df['%CHNG'] >= user_threshold]
+    st.subheader(f"Stocks with Price Change > {user_threshold}%")
+    st.dataframe(filtered_by_threshold)
+
 
 else:
     st.subheader("Please upload your csv file to proceed")
