@@ -30,10 +30,9 @@ streamlit run app.py
 The app will open in your default web browser, allowing you to upload a CSV file with stock data.
 Alternatively, you can directly access the deployed app here:
 
-```markdown
 [Open High Open Low Strategy](https://openhigh-or-low.streamlit.app/)
-```
 CSV File Format
+
 Ensure that your CSV file has the following columns (case-insensitive):
 
 OPEN: The opening price of the stock.
