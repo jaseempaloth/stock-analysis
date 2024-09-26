@@ -31,6 +31,8 @@ The app will open in your default web browser, allowing you to upload a CSV file
 Alternatively, you can directly access the deployed app here:
 
 [Open High Open Low Strategy](https://openhigh-or-low.streamlit.app/)
+
+
 CSV File Format
 
 Ensure that your CSV file has the following columns (case-insensitive):
