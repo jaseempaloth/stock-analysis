@@ -9,7 +9,10 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     df.columns = df.columns.str.strip()
 
-    # Remove columns that have all null values
+    # Replace '-' or any non-null placeholder with NaN
+    df.replace('-', pd.NA, inplace=True)
+
+    # Then drop columns where all values are NaN
     df = df.dropna(axis=1, how='all')
 
     open_high = df[df['OPEN'] == df['LOW']]
