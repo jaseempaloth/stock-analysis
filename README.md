@@ -19,18 +19,23 @@ pip install streamlit
 pip install pandas
 ```
 
-Running the App Locally
-Clone the repository or download the code.
-Navigate to the directory containing app.py.
-Start the app with the following command:
+#### Running the App Locally
+1. Clone the repository or download the code.
+2. Navigate to the directory containing app.py.
+3. Start the app with the following command:
 
 ```bash
 streamlit run app.py
 ```
-The app will open in your default web browser, allowing you to upload a CSV file with stock data.
-Alternatively, you can directly access the deployed app here:
+4. The app will open in your default web browser, allowing you to upload a CSV file with stock data.
+
+#### Running the Deployed App
+For a quick and easy experience, you can use the deployed version of the app. This allows you to access the functionality without setting up the app on your local machine.
+Access the Deployed App: Click the link below to open the app in your web browser:
 
 [Open High Open Low Strategy](https://openhigh-or-low.streamlit.app/)
+
+In the deployed app, you can upload your CSV file directly, and it will perform the same data filtering and display as the local version.
 
 ## Getting Real-Time Market Data
 
