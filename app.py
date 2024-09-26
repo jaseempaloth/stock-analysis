@@ -9,6 +9,9 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     df.columns = df.columns.str.strip()
 
+    # Remove columns that have all null values
+    df = df.dropna(axis=1, how='all')
+
     open_high = df[df['OPEN'] == df['LOW']]
     open_low = df[df['OPEN'] == df['HIGH']]
 
