@@ -17,6 +17,7 @@ Ensure you have Python installed on your machine. If you don’t have Streamlit 
 ```bash
 pip install streamlit
 pip install pandas
+pip install google-generativeai
 ```
 
 #### Running the App Locally
