@@ -1,6 +1,50 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
+import google.generativeai as genai
+import os
+
+st.set_page_config(page_title="Financial Market AI Assistant", layout="centered")
+
+genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
+
+# Set up the model generation configuration
+generation_config = {
+    "temperature": 1,
+    "top_p": 0.95,
+    "top_k": 64,
+    "max_output_tokens": 8192,
+    "response_mime_type": "text/plain",
+}
+
+# Create the Generative Model
+model = genai.GenerativeModel(
+    model_name="gemini-1.5-pro",
+    generation_config=generation_config,
+    system_instruction=(
+        """You are a financial expert AI assistant. Your role is to provide detailed and accurate responses
+        to questions related to financial markets, investment strategies, stock performance, market analysis,
+        and economic indicators. Focus on using relevant financial terminology and consider factors such as stock trends,
+        economic policies, financial reports, and market sentiment when answering questions. When possible, provide data-driven insights to guide investment and financial decisions."""
+        "Provide a recommendation on a balanced portfolio strategy for a long-term investor in a volatile market. Consider risk factors, asset allocation, and market trends."
+        "You are an AI stock analyst. Provide a detailed analysis of stock performance over the last quarter, focusing on earnings reports, market sentiment, and key financial ratios."
+        "You are an intraday trading assistant specializing in forex markets. Provide insights and strategies focused on scalping and momentum trading for major currency pairs. Analyze current market trends and suggest effective technical indicators to use for quick trades, considering economic news releases and volatility."
+        "You are a trading assistant focused on swing trading strategies for the stock market. Provide analysis based on technical chart patterns, key support/resistance levels, and fundamental news. Tailor your recommendations for traders looking to hold positions for several days to weeks, considering current market conditions and potential risks."
+    ),
+)
+
+st.title('Market Analyst AI')
+user_input = st.text_area("Ask a question related to financial markets: LLM can make mistakes, so double-check it")
+
+if st.button('Get Answer'):
+    if user_input:
+        chat_session = model.start_chat(history=[])
+        response = chat_session.send_message(user_input)
+
+        st.subheader('AI Response:')
+        st.write(response.text)
+    else:
+        st.error('Please enter a question to get an answer.')
+
 
 st.title("Open High Open Low Strategy")
 
